@@ -242,6 +242,10 @@ a {
   backdrop-filter: blur(18px);
 }
 
+.site-header nav {
+  margin-left: auto;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -280,6 +284,35 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.52);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  border: 1px solid rgba(23, 24, 19, 0.12);
+  border-radius: 999px;
+  padding: 0.18rem;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0 12px 30px rgba(54, 48, 37, 0.08);
+}
+
+.language-switch button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.38rem 0.54rem;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.language-switch button.active {
+  color: var(--paper-soft);
+  background: var(--ink);
+}
+
 .section {
   max-width: 1180px;
   margin: 0 auto;
@@ -316,13 +349,13 @@ p {
 
 h1 {
   width: 100%;
-  max-width: 780px;
+  max-width: 650px;
   margin-bottom: 1.25rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.8rem, 9vw, 7.8rem);
+  font-size: clamp(2.8rem, 5.35vw, 5.15rem);
   font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -719,13 +752,15 @@ p {
   margin-bottom: 2rem;
 }
 
-.system-grid {
+.system-grid,
+.profile-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .system-card,
+.profile-card,
 .timeline article,
 .education-card,
 .stack-item {
@@ -739,12 +774,14 @@ p {
 }
 
 .system-card,
+.profile-card,
 .timeline article,
 .education-card {
   padding: 1.25rem;
 }
 
 .system-card:hover,
+.profile-card:hover,
 .timeline article:hover,
 .education-card:hover,
 .stack-item:hover {
@@ -759,6 +796,7 @@ p {
 }
 
 .system-card span,
+.profile-card span,
 .date {
   display: block;
   margin-bottom: 1rem;
@@ -767,6 +805,23 @@ p {
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.profile-section .section-heading p:not(.eyebrow) {
+  max-width: 760px;
+  color: #4f4b42;
+  font-size: 1.05rem;
+}
+
+.profile-card {
+  min-height: 220px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.38), rgba(251, 247, 239, 0.72)),
+    radial-gradient(circle at 88% 16%, rgba(185, 107, 75, 0.12), transparent 9rem);
+}
+
+.profile-card h3 {
+  font-size: 1.18rem;
 }
 
 .stack-board {
@@ -1757,6 +1812,7 @@ p {
 
   .hero,
   .system-grid,
+  .profile-grid,
   .stack-board,
   .timeline,
   .education-card {
@@ -1770,7 +1826,7 @@ p {
   }
 
   h1 {
-    font-size: clamp(3.2rem, 16vw, 5.4rem);
+    font-size: clamp(2.55rem, 11vw, 4.1rem);
   }
 
   .metrics {

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -46,18 +46,23 @@
     <header class="site-header">
       <a class="brand" href="#top">Akshay<span>AI</span></a>
       <nav aria-label="Main navigation">
-        <a href="#system">System</a>
-        <a href="#stack">Stack</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#system" data-i18n="nav.system">System</a>
+        <a href="#profile" data-i18n="nav.profile">Profile</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
+      <div class="language-switch" aria-label="Language switch">
+        <button class="active" type="button" data-lang-switch="en">EN</button>
+        <button type="button" data-lang-switch="fr">FR</button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section">
         <div class="hero-copy reveal">
-          <p class="eyebrow">AI Automation Builder - Business Analyst - Data Thinker</p>
-          <h1>AI workflows for <em>clearer business operations.</em></h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">AI Automation Builder - Business Analyst - Data Thinker</p>
+          <h1 data-i18n-html="hero.title">AI workflows for <em>clearer business operations.</em></h1>
           <div class="role-reel" aria-label="Professional focus">
             <div>
               <span>AI Automation Builder</span>
@@ -68,23 +73,23 @@
               <span>Business Analyst</span>
             </div>
           </div>
-          <p class="hero-text">
+          <p class="hero-text" data-i18n="hero.text">
             I build practical automations that connect tools, route information, reduce manual work,
             and help business teams make faster decisions.
           </p>
           <div class="signal-panel" aria-label="Current focus">
-            <span>Current focus</span>
-            <strong>AI workflow systems for business operations</strong>
+            <span data-i18n="hero.focusLabel">Current focus</span>
+            <strong data-i18n="hero.focus">AI workflow systems for business operations</strong>
           </div>
           <div class="hero-actions">
-            <a class="button primary" href="mailto:akshayallam11@gmail.com">Start a conversation</a>
+            <a class="button primary" href="mailto:akshayallam11@gmail.com" data-i18n="hero.cta">Start a conversation</a>
             <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam">LinkedIn</a>
             <a class="button secondary" href="https://github.com/Akshay-ALLAM">GitHub</a>
           </div>
           <div class="metrics" aria-label="Profile highlights">
-            <div><strong>Paris</strong><span>France based</span></div>
-            <div><strong>n8n + Make</strong><span>Automation focus</span></div>
-            <div><strong>AI + Data</strong><span>Business workflow lens</span></div>
+            <div><strong>Paris</strong><span data-i18n="hero.metric1">France based</span></div>
+            <div><strong>n8n + Make</strong><span data-i18n="hero.metric2">Automation focus</span></div>
+            <div><strong>AI + Data</strong><span data-i18n="hero.metric3">Business workflow lens</span></div>
           </div>
         </div>
 
@@ -101,9 +106,9 @@
             </div>
             <div class="scan-line"></div>
             <div class="console-text">
-              <p class="status"><span></span> Available for opportunities</p>
+              <p class="status"><span></span> <b data-i18n="console.status">Available for opportunities</b></p>
               <h2>Akshay Allam</h2>
-              <p>AI Automation Builder | Strategy & Data Analyst</p>
+              <p data-i18n="console.role">AI Automation Builder | Strategy & Data Analyst</p>
             </div>
             <div class="workflow-map" aria-hidden="true">
               <div class="node active">Input</div>
@@ -115,9 +120,9 @@
               <div class="node">Action</div>
             </div>
             <div class="terminal">
-              <p><span>01</span> capture business signal</p>
-              <p><span>02</span> classify, route, enrich</p>
-              <p><span>03</span> trigger next action</p>
+              <p><span>01</span> <b data-i18n="console.step1">capture business signal</b></p>
+              <p><span>02</span> <b data-i18n="console.step2">classify, route, enrich</b></p>
+              <p><span>03</span> <b data-i18n="console.step3">trigger next action</b></p>
             </div>
             <div class="console-meter" aria-hidden="true">
               <i></i><i></i><i></i><i></i><i></i>
@@ -139,32 +144,69 @@
 
       <section id="system" class="section system-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">System thinking</p>
-          <h2>From messy process to intelligent workflow.</h2>
+          <p class="eyebrow" data-i18n="system.eyebrow">System thinking</p>
+          <h2 data-i18n="system.title">From messy process to intelligent workflow.</h2>
         </div>
         <div class="system-grid">
           <article class="system-card reveal">
             <span>01</span>
-            <h3>Map the work</h3>
-            <p>Understand the manual steps, decision points, handoffs, and where time gets wasted.</p>
+            <h3 data-i18n="system.card1Title">Map the work</h3>
+            <p data-i18n="system.card1Text">Understand the manual steps, decision points, handoffs, and where time gets wasted.</p>
           </article>
           <article class="system-card reveal">
             <span>02</span>
-            <h3>Build the automation</h3>
-            <p>Connect APIs, spreadsheets, AI models, and business tools into a practical workflow.</p>
+            <h3 data-i18n="system.card2Title">Build the automation</h3>
+            <p data-i18n="system.card2Text">Connect APIs, spreadsheets, AI models, and business tools into a practical workflow.</p>
           </article>
           <article class="system-card reveal">
             <span>03</span>
-            <h3>Make it usable</h3>
-            <p>Document the process, structure the outputs, and keep the system easy to understand.</p>
+            <h3 data-i18n="system.card3Title">Make it usable</h3>
+            <p data-i18n="system.card3Text">Document the process, structure the outputs, and keep the system easy to understand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="profile" class="section profile-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="profile.eyebrow">Profile depth</p>
+          <h2 data-i18n="profile.title">Business analysis, finance, and automation in one operating view.</h2>
+          <p data-i18n="profile.intro">
+            MBA candidate in Corporate Finance with experience across market research, competitive intelligence,
+            financial planning, data dashboards, and AI-supported workflow automation.
+          </p>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card1Label">Market strategy</span>
+            <h3 data-i18n="profile.card1Title">Research that supports decisions</h3>
+            <p data-i18n="profile.card1Text">
+              Researched funding opportunities, grants, market entry points, and competitor positioning for
+              international business development work.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card2Label">Data analysis</span>
+            <h3 data-i18n="profile.card2Title">Dashboards and reporting</h3>
+            <p data-i18n="profile.card2Text">
+              Built Power BI dashboards, cleaned datasets, validated data quality, and supported senior
+              stakeholders with reporting workflows.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card3Label">Finance projects</span>
+            <h3 data-i18n="profile.card3Title">Commercial planning</h3>
+            <p data-i18n="profile.card3Text">
+              Worked on market feasibility, strategic financial planning, operational KPIs, and investor-style
+              materials through MBA and internship projects.
+            </p>
           </article>
         </div>
       </section>
 
       <section id="stack" class="section stack-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Automation stack</p>
-          <h2>Tools I use to connect business logic with AI execution.</h2>
+          <p class="eyebrow" data-i18n="stack.eyebrow">Automation stack</p>
+          <h2 data-i18n="stack.title">Tools I use to connect business logic with AI execution.</h2>
         </div>
         <div class="stack-board reveal">
           <div class="stack-item stack-n8n">
@@ -172,64 +214,64 @@
               <i></i><b></b><i></i><b></b><i></i>
             </div>
             <strong>n8n</strong>
-            <span>Workflow orchestration</span>
+            <span data-i18n="stack.n8n">Workflow orchestration</span>
           </div>
           <div class="stack-item stack-make">
             <div class="tool-visual make-flow" aria-hidden="true">
               <i>M</i><b></b><i></i><b></b><i></i>
             </div>
             <strong>Make</strong>
-            <span>No-code automation</span>
+            <span data-i18n="stack.make">No-code automation</span>
           </div>
           <div class="stack-item stack-sheets">
             <div class="tool-visual sheets-grid" aria-hidden="true">
               <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
             </div>
             <strong>Google Sheets</strong>
-            <span>Lightweight operations layer</span>
+            <span data-i18n="stack.sheets">Lightweight operations layer</span>
           </div>
           <div class="stack-item stack-powerbi">
             <div class="tool-visual bi-bars" aria-hidden="true">
               <i></i><i></i><i></i><i></i>
             </div>
             <strong>Power BI</strong>
-            <span>Business dashboards</span>
+            <span data-i18n="stack.powerbi">Business dashboards</span>
           </div>
           <div class="stack-item stack-ai">
             <div class="tool-visual ai-web" aria-hidden="true">
               <i></i><b></b><i></i><b></b><i></i><b></b><i></i>
             </div>
             <strong>AI Models</strong>
-            <span>Classification, reasoning, summarization</span>
+            <span data-i18n="stack.ai">Classification, reasoning, summarization</span>
           </div>
           <div class="stack-item stack-airtable">
             <div class="tool-visual airtable-blocks" aria-hidden="true">
               <i></i><i></i><i></i>
             </div>
             <strong>Airtable</strong>
-            <span>Learning next</span>
+            <span data-i18n="stack.airtable">Learning next</span>
           </div>
         </div>
       </section>
 
       <section id="experience" class="section experience-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Background</p>
-          <h2>Business, research, and data experience behind the automation.</h2>
+          <p class="eyebrow" data-i18n="experience.eyebrow">Background</p>
+          <h2 data-i18n="experience.title">Business, research, and data experience behind the automation.</h2>
         </div>
         <div class="timeline">
           <article class="reveal">
             <p class="date">May 2025 - Sep 2025</p>
-            <h3>Market Research Analyst - Certiff B.V.</h3>
-            <p>
+            <h3 data-i18n="experience.certiffTitle">Market Research Analyst - Certiff B.V.</h3>
+            <p data-i18n="experience.certiffText">
               Worked on competitor analysis, funding opportunities, market-entry research, and
               strategic partnership support for SkillsPass.
             </p>
           </article>
           <article class="reveal">
             <p class="date">Mar 2023 - Oct 2023</p>
-            <h3>Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.</h3>
-            <p>
+            <h3 data-i18n="experience.dataTitle">Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.</h3>
+            <p data-i18n="experience.dataText">
               Built Power BI dashboards, cleaned structured datasets, and supported reporting
               workflows for business decision-making.
             </p>
@@ -240,9 +282,9 @@
       <section class="section education-section">
         <div class="education-card reveal">
           <div class="education-heading">
-            <p class="eyebrow">Education journey</p>
-            <h2>From Hyderabad to Paris.</h2>
-            <p>
+            <p class="eyebrow" data-i18n="education.eyebrow">Education journey</p>
+            <h2 data-i18n="education.title">From Hyderabad to Paris.</h2>
+            <p data-i18n="education.text">
               Finance foundation in India, then corporate finance and business strategy in France.
             </p>
           </div>
@@ -252,12 +294,12 @@
               <div class="charminar">
                 <img src="assets/charminar-3d.png" alt="" loading="lazy" />
               </div>
-              <small>Hyderabad</small>
+              <small data-i18n="education.hyderabad">Hyderabad</small>
             </div>
             <div class="edu-detail">
               <span>Jun 2019 - Jul 2022</span>
-              <h3>BBA in Finance</h3>
-              <p>Osmania University - Hyderabad, India</p>
+              <h3 data-i18n="education.bba">BBA in Finance</h3>
+              <p data-i18n="education.bbaSchool">Osmania University - Hyderabad, India</p>
             </div>
           </div>
           <div class="flight-path" aria-hidden="true">
@@ -272,27 +314,27 @@
               <div class="eiffel">
                 <img src="assets/eiffel-3d.png" alt="" loading="lazy" />
               </div>
-              <small>Paris</small>
+              <small data-i18n="education.paris">Paris</small>
             </div>
             <div class="edu-detail">
               <span>Mar 2024 - Jun 2026</span>
-              <h3>MBA in Corporate Finance</h3>
-              <p>ISTEC Business School - Paris, France</p>
+              <h3 data-i18n="education.mba">MBA in Corporate Finance</h3>
+              <p data-i18n="education.mbaSchool">ISTEC Business School - Paris, France</p>
             </div>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section contact reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Let us build AI systems that actually save time.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 data-i18n="contact.title">Let us build AI systems that actually save time.</h2>
+        <p data-i18n="contact.text">
           I am interested in roles and collaborations where business analysis, data thinking, and AI
           automation come together.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="mailto:akshayallam11@gmail.com">akshayallam11@gmail.com</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam">Connect on LinkedIn</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam" data-i18n="contact.linkedin">Connect on LinkedIn</a>
         </div>
       </section>
     </main>

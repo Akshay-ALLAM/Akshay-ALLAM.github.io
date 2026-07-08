@@ -160,6 +160,179 @@ for (const item of magneticItems) {
   });
 }
 
+const translations = {
+  en: {
+    "nav.system": "System",
+    "nav.profile": "Profile",
+    "nav.stack": "Stack",
+    "nav.experience": "Experience",
+    "nav.contact": "Contact",
+    "hero.eyebrow": "AI Automation Builder - Business Analyst - Data Thinker",
+    "hero.title": "AI workflows for <em>clearer business operations.</em>",
+    "hero.text": "I build practical automations that connect tools, route information, reduce manual work, and help business teams make faster decisions.",
+    "hero.focusLabel": "Current focus",
+    "hero.focus": "AI workflow systems for business operations",
+    "hero.cta": "Start a conversation",
+    "hero.metric1": "France based",
+    "hero.metric2": "Automation focus",
+    "hero.metric3": "Business workflow lens",
+    "_roles": ["AI Automation Builder", "Business Analyst", "Workflow Designer", "Data Thinker", "AI Automation Builder", "Business Analyst"],
+    "console.status": "Available for opportunities",
+    "console.role": "AI Automation Builder | Strategy & Data Analyst",
+    "console.step1": "capture business signal",
+    "console.step2": "classify, route, enrich",
+    "console.step3": "trigger next action",
+    "system.eyebrow": "System thinking",
+    "system.title": "From messy process to intelligent workflow.",
+    "system.card1Title": "Map the work",
+    "system.card1Text": "Understand the manual steps, decision points, handoffs, and where time gets wasted.",
+    "system.card2Title": "Build the automation",
+    "system.card2Text": "Connect APIs, spreadsheets, AI models, and business tools into a practical workflow.",
+    "system.card3Title": "Make it usable",
+    "system.card3Text": "Document the process, structure the outputs, and keep the system easy to understand.",
+    "profile.eyebrow": "Profile depth",
+    "profile.title": "Business analysis, finance, and automation in one operating view.",
+    "profile.intro": "MBA candidate in Corporate Finance with experience across market research, competitive intelligence, financial planning, data dashboards, and AI-supported workflow automation.",
+    "profile.card1Label": "Market strategy",
+    "profile.card1Title": "Research that supports decisions",
+    "profile.card1Text": "Researched funding opportunities, grants, market entry points, and competitor positioning for international business development work.",
+    "profile.card2Label": "Data analysis",
+    "profile.card2Title": "Dashboards and reporting",
+    "profile.card2Text": "Built Power BI dashboards, cleaned datasets, validated data quality, and supported senior stakeholders with reporting workflows.",
+    "profile.card3Label": "Finance projects",
+    "profile.card3Title": "Commercial planning",
+    "profile.card3Text": "Worked on market feasibility, strategic financial planning, operational KPIs, and investor-style materials through MBA and internship projects.",
+    "stack.eyebrow": "Automation stack",
+    "stack.title": "Tools I use to connect business logic with AI execution.",
+    "stack.n8n": "Workflow orchestration",
+    "stack.make": "No-code automation",
+    "stack.sheets": "Lightweight operations layer",
+    "stack.powerbi": "Business dashboards",
+    "stack.ai": "Classification, reasoning, summarization",
+    "stack.airtable": "Learning next",
+    "experience.eyebrow": "Background",
+    "experience.title": "Business, research, and data experience behind the automation.",
+    "experience.certiffTitle": "Market Research Analyst - Certiff B.V.",
+    "experience.certiffText": "Worked on competitor analysis, funding opportunities, market-entry research, and strategic partnership support for SkillsPass.",
+    "experience.dataTitle": "Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.",
+    "experience.dataText": "Built Power BI dashboards, cleaned structured datasets, and supported reporting workflows for business decision-making.",
+    "education.eyebrow": "Education journey",
+    "education.title": "From Hyderabad to Paris.",
+    "education.text": "Finance foundation in India, then corporate finance and business strategy in France.",
+    "education.hyderabad": "Hyderabad",
+    "education.paris": "Paris",
+    "education.bba": "BBA in Finance",
+    "education.bbaSchool": "Osmania University - Hyderabad, India",
+    "education.mba": "MBA in Corporate Finance",
+    "education.mbaSchool": "ISTEC Business School - Paris, France",
+    "contact.eyebrow": "Contact",
+    "contact.title": "Let us build AI systems that actually save time.",
+    "contact.text": "I am interested in roles and collaborations where business analysis, data thinking, and AI automation come together.",
+    "contact.linkedin": "Connect on LinkedIn",
+  },
+  fr: {
+    "nav.system": "Système",
+    "nav.profile": "Profil",
+    "nav.stack": "Outils",
+    "nav.experience": "Expérience",
+    "nav.contact": "Contact",
+    "hero.eyebrow": "Créateur d'automatisations IA - Business Analyst - Data Thinker",
+    "hero.title": "Des workflows IA pour des <em>opérations plus claires.</em>",
+    "hero.text": "Je construis des automatisations concrètes qui connectent les outils, orientent l'information, réduisent le travail manuel et aident les équipes à décider plus vite.",
+    "hero.focusLabel": "Focus actuel",
+    "hero.focus": "Systèmes de workflow IA pour les opérations business",
+    "hero.cta": "Me contacter",
+    "hero.metric1": "Basé en France",
+    "hero.metric2": "Focus automatisation",
+    "hero.metric3": "Vision business, IA et data",
+    "_roles": ["Créateur d'automatisations IA", "Business Analyst", "Workflow Designer", "Data Thinker", "Créateur d'automatisations IA", "Business Analyst"],
+    "console.status": "Disponible pour opportunités",
+    "console.role": "AI Automation Builder | Strategy & Data Analyst",
+    "console.step1": "capturer le signal business",
+    "console.step2": "classer, router, enrichir",
+    "console.step3": "déclencher l'action suivante",
+    "system.eyebrow": "Pensée système",
+    "system.title": "Du processus manuel au workflow intelligent.",
+    "system.card1Title": "Cartographier le travail",
+    "system.card1Text": "Comprendre les étapes manuelles, les décisions, les passages de relais et les pertes de temps.",
+    "system.card2Title": "Construire l'automatisation",
+    "system.card2Text": "Connecter APIs, tableurs, modèles IA et outils business dans un workflow pratique.",
+    "system.card3Title": "Rendre le système utilisable",
+    "system.card3Text": "Documenter le processus, structurer les sorties et garder le système facile à comprendre.",
+    "profile.eyebrow": "Profil détaillé",
+    "profile.title": "Business analysis, finance et automatisation dans une même vision opérationnelle.",
+    "profile.intro": "Candidat MBA en Corporate Finance avec une expérience en market research, competitive intelligence, planification financière, dashboards data et automatisation de workflows avec l'IA.",
+    "profile.card1Label": "Stratégie marché",
+    "profile.card1Title": "Recherche orientée décision",
+    "profile.card1Text": "Recherche d'opportunités de financement, de subventions, de points d'entrée marché et de positionnement concurrentiel pour le développement international.",
+    "profile.card2Label": "Analyse data",
+    "profile.card2Title": "Dashboards et reporting",
+    "profile.card2Text": "Création de dashboards Power BI, nettoyage de datasets, validation de la qualité des données et support aux parties prenantes avec des workflows de reporting.",
+    "profile.card3Label": "Projets finance",
+    "profile.card3Title": "Planification commerciale",
+    "profile.card3Text": "Travail sur la faisabilité marché, la planification financière stratégique, les KPIs opérationnels et les supports de type investisseur.",
+    "stack.eyebrow": "Stack automatisation",
+    "stack.title": "Les outils que j'utilise pour connecter la logique business à l'exécution IA.",
+    "stack.n8n": "Orchestration de workflows",
+    "stack.make": "Automatisation no-code",
+    "stack.sheets": "Couche opérationnelle légère",
+    "stack.powerbi": "Dashboards business",
+    "stack.ai": "Classification, raisonnement, résumé",
+    "stack.airtable": "En apprentissage",
+    "experience.eyebrow": "Parcours",
+    "experience.title": "Expérience business, recherche et data derrière l'automatisation.",
+    "experience.certiffTitle": "Market Research Analyst - Certiff B.V.",
+    "experience.certiffText": "Travail sur l'analyse concurrentielle, les opportunités de financement, la recherche de marchés et le support partenarial stratégique pour SkillsPass.",
+    "experience.dataTitle": "Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.",
+    "experience.dataText": "Création de dashboards Power BI, nettoyage de données structurées et support aux workflows de reporting pour la prise de décision business.",
+    "education.eyebrow": "Parcours académique",
+    "education.title": "De Hyderabad à Paris.",
+    "education.text": "Base en finance en Inde, puis Corporate Finance et stratégie business en France.",
+    "education.hyderabad": "Hyderabad",
+    "education.paris": "Paris",
+    "education.bba": "BBA en Finance",
+    "education.bbaSchool": "Osmania University - Hyderabad, Inde",
+    "education.mba": "MBA en Corporate Finance",
+    "education.mbaSchool": "ISTEC Business School - Paris, France",
+    "contact.eyebrow": "Contact",
+    "contact.title": "Construisons des systèmes IA qui font vraiment gagner du temps.",
+    "contact.text": "Je suis intéressé par les rôles et collaborations où business analysis, data thinking et automatisation IA se rejoignent.",
+    "contact.linkedin": "Me contacter sur LinkedIn",
+  },
+};
+
+function setLanguage(lang) {
+  const dictionary = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+  document.documentElement.dataset.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (dictionary[key]) element.textContent = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const key = element.dataset.i18nHtml;
+    if (dictionary[key]) element.innerHTML = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.langSwitch === lang);
+  });
+
+  document.querySelectorAll(".role-reel span").forEach((element, index) => {
+    if (dictionary._roles?.[index]) element.textContent = dictionary._roles[index];
+  });
+
+  localStorage.setItem("portfolioLanguage", lang);
+}
+
+document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+  button.addEventListener("click", () => setLanguage(button.dataset.langSwitch));
+});
+
+setLanguage(localStorage.getItem("portfolioLanguage") || "en");
+
 runLoader();
 resize();
 updateScrollProgress();
