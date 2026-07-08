@@ -2,7 +2,7 @@
   --paper: #f4efe4;
   --paper-soft: #fbf7ef;
   --ink: #171813;
-  --muted: #6f6a5e;
+  --muted: #5c584e;
   --line: rgba(23, 24, 19, 0.14);
   --olive: #56613d;
   --moss: #8a9464;
@@ -517,6 +517,18 @@ p {
   content: "";
 }
 
+.ai-console::after {
+  position: absolute;
+  inset: -40% -20%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.28) 48%, transparent 60%);
+  content: "";
+  opacity: 0.35;
+  transform: translateX(-48%);
+  animation: consoleGlint 7s ease-in-out infinite;
+}
+
 .console-top {
   display: flex;
   align-items: center;
@@ -740,6 +752,10 @@ p {
   background: rgba(251, 247, 239, 0.92);
   box-shadow: 0 26px 68px rgba(54, 48, 37, 0.14);
   transform: translateY(-5px);
+}
+
+.magnetic {
+  will-change: transform;
 }
 
 .system-card span,
@@ -1054,6 +1070,12 @@ p {
   50% { transform: translateY(-10px) rotate(0.6deg); }
 }
 
+@keyframes consoleGlint {
+  0%, 100% { transform: translateX(-48%); opacity: 0; }
+  42%, 56% { opacity: 0.36; }
+  70% { transform: translateX(48%); opacity: 0; }
+}
+
 @keyframes linkPulse {
   0%, 100% { opacity: 0.35; transform: scaleX(0.55); }
   50% { opacity: 1; transform: scaleX(1); }
@@ -1152,13 +1174,19 @@ p {
   }
 
   .workflow-map {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr) 12px minmax(0, 1fr) 12px minmax(0, 1fr);
+    gap: 0.22rem;
   }
 
   .link {
-    width: 1px;
-    height: 18px;
+    width: auto;
+    height: 1px;
     margin: 0 auto;
+  }
+
+  .node {
+    padding: 0.48rem 0.15rem;
+    font-size: 0.66rem;
   }
 
   .section {
@@ -1170,6 +1198,10 @@ p {
   }
 
   .cursor-dot {
+    display: none;
+  }
+
+  .cursor-glow {
     display: none;
   }
 

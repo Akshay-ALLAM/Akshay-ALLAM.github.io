@@ -145,8 +145,19 @@ for (const item of reveals) {
 }
 
 for (const item of magneticItems) {
+  item.classList.add("magnetic");
   item.addEventListener("pointerenter", () => cursorDot?.classList.add("active"));
-  item.addEventListener("pointerleave", () => cursorDot?.classList.remove("active"));
+  item.addEventListener("pointermove", (event) => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+    const box = item.getBoundingClientRect();
+    const x = (event.clientX - box.left - box.width / 2) * 0.08;
+    const y = (event.clientY - box.top - box.height / 2) * 0.08;
+    item.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  item.addEventListener("pointerleave", () => {
+    cursorDot?.classList.remove("active");
+    item.style.transform = "";
+  });
 }
 
 runLoader();
