@@ -3,20 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Akshay Allam | AI Automation & Business Analysis</title>
+    <title>Akshay Allam | AI Automation Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Akshay Allam, an AI Automation Builder and Strategy & Data Analyst based in Paris, France."
+      content="Cinematic AI automation portfolio for Akshay Allam, an AI Automation Builder and Strategy & Data Analyst based in Paris, France."
     />
     <link rel="preconnect" href="https://github.com" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2303050a'/%3E%3Cpath d='M14 40 28 14h8l14 26h-8l-3-6H25l-3 6h-8Zm14-12h8l-4-8-4 8Z' fill='%2355e7ff'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2348ff9b'/%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="brand" href="#top">Akshay Allam</a>
+      <a class="brand" href="#top">Akshay<span>AI</span></a>
       <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
+        <a href="#system">System</a>
+        <a href="#stack">Stack</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -24,130 +32,127 @@
 
     <main id="top">
       <section class="hero section">
-        <div class="hero-orbit" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="hero-copy">
-          <p class="eyebrow">AI Automation · Business Analysis · Data Thinking</p>
-          <h1>Building practical AI systems for real business workflows.</h1>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">AI Automation Builder - Business Analyst - Data Thinker</p>
+          <h1>Designing AI workflows that move like systems, not slides.</h1>
           <p class="hero-text">
-            I build practical workflows that connect tools, reduce manual work, and turn business
-            processes into simple systems. My background blends business analysis, market research,
-            data reporting, and hands-on AI automation.
+            I build practical automations that connect tools, route information, reduce manual work,
+            and help business teams make faster decisions.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="mailto:akshayallam11@gmail.com">Contact me</a>
+            <a class="button primary" href="mailto:akshayallam11@gmail.com">Start a conversation</a>
             <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam">LinkedIn</a>
             <a class="button secondary" href="https://github.com/Akshay-ALLAM">GitHub</a>
           </div>
-        </div>
-        <aside class="profile-panel ai-panel" aria-label="Profile summary">
-          <div class="status-row">
-            <span class="pulse"></span>
-            <span>Available for opportunities</span>
+          <div class="metrics" aria-label="Profile highlights">
+            <div><strong>Paris</strong><span>France based</span></div>
+            <div><strong>n8n + Make</strong><span>Automation focus</span></div>
+            <div><strong>AI + Data</strong><span>Business workflow lens</span></div>
           </div>
-          <img
-            src="https://github.com/Akshay-ALLAM.png"
-            alt="Akshay Allam"
-            class="avatar"
-          />
-          <h2>Akshay Allam</h2>
-          <p>AI Automation Builder · Strategy & Data Analyst</p>
-          <dl>
-            <div>
-              <dt>Focus</dt>
-              <dd>n8n, Make, AI workflows, business analysis</dd>
+        </div>
+
+        <aside class="ai-console reveal" aria-label="AI automation command center">
+          <div class="console-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>automation.system</p>
+          </div>
+          <div class="console-body">
+            <div class="avatar-ring">
+              <img src="https://github.com/Akshay-ALLAM.png" alt="Akshay Allam" />
             </div>
-            <div>
-              <dt>Education</dt>
-              <dd>MBA Corporate Finance · BBA Finance</dd>
+            <div class="scan-line"></div>
+            <div class="console-text">
+              <p class="status"><span></span> Available for opportunities</p>
+              <h2>Akshay Allam</h2>
+              <p>AI Automation Builder | Strategy & Data Analyst</p>
             </div>
-            <div>
-              <dt>Next</dt>
-              <dd>Airtable, agentic AI, stronger automation case studies</dd>
+            <div class="workflow-map" aria-hidden="true">
+              <div class="node active">Input</div>
+              <div class="link"></div>
+              <div class="node">AI</div>
+              <div class="link"></div>
+              <div class="node">Sheets</div>
+              <div class="link"></div>
+              <div class="node">Action</div>
             </div>
-          </dl>
+            <div class="terminal">
+              <p><span>01</span> capture business signal</p>
+              <p><span>02</span> classify, route, enrich</p>
+              <p><span>03</span> trigger next action</p>
+            </div>
+          </div>
         </aside>
       </section>
 
-      <section class="signal-strip" aria-label="Portfolio signal">
-        <span>n8n workflows</span>
-        <span>Make automation</span>
-        <span>AI agents</span>
-        <span>Google Sheets systems</span>
-        <span>Power BI dashboards</span>
-      </section>
-
-      <section id="work" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Portfolio direction</p>
-          <h2>From business problem to automated workflow.</h2>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span>01</span>
-            <h3>Automate</h3>
-            <p>
-              Designing workflows with n8n, Make, Google Sheets, APIs, and LLMs to remove repetitive
-              manual work.
-            </p>
-          </article>
-          <article class="feature-card">
-            <span>02</span>
-            <h3>Analyze</h3>
-            <p>
-              Using Power BI, Excel, market research, and structured data to support business
-              decisions.
-            </p>
-          </article>
-          <article class="feature-card">
-            <span>03</span>
-            <h3>Translate</h3>
-            <p>
-              Turning business problems into clear workflows, requirements, dashboards, and action
-              plans.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="section split">
+      <section class="marquee" aria-label="Automation areas">
         <div>
-          <p class="eyebrow">Skills</p>
-          <h2>Business-first AI automation stack.</h2>
-          <p>
-            I focus on tools that help small teams move faster: AI workflows, spreadsheets, dashboards,
-            documentation, and business reporting.
-          </p>
-        </div>
-        <div class="skill-list">
-          <div><strong>AI Automation</strong><span>n8n, Make, APIs, LLM workflows, prompt engineering</span></div>
-          <div><strong>Data & Reporting</strong><span>Power BI, Advanced Excel, Google Sheets, KPI tracking</span></div>
-          <div><strong>Business Analysis</strong><span>Requirements gathering, process improvement, stakeholder reporting</span></div>
-          <div><strong>Strategy</strong><span>Market research, competitive analysis, go-to-market thinking</span></div>
-          <div><strong>Learning Next</strong><span>Airtable, agentic AI workflows, no-code database systems</span></div>
+          <span>n8n workflows</span>
+          <span>Make automation</span>
+          <span>AI agents</span>
+          <span>Google Sheets systems</span>
+          <span>Power BI dashboards</span>
+          <span>Airtable learning</span>
         </div>
       </section>
 
-      <section id="experience" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <h2>Business, data, and research background.</h2>
+      <section id="system" class="section system-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">System thinking</p>
+          <h2>From messy process to intelligent workflow.</h2>
+        </div>
+        <div class="system-grid">
+          <article class="system-card reveal">
+            <span>01</span>
+            <h3>Map the work</h3>
+            <p>Understand the manual steps, decision points, handoffs, and where time gets wasted.</p>
+          </article>
+          <article class="system-card reveal">
+            <span>02</span>
+            <h3>Build the automation</h3>
+            <p>Connect APIs, spreadsheets, AI models, and business tools into a practical workflow.</p>
+          </article>
+          <article class="system-card reveal">
+            <span>03</span>
+            <h3>Make it usable</h3>
+            <p>Document the process, structure the outputs, and keep the system easy to understand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" class="section stack-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Automation stack</p>
+          <h2>Tools I use to connect business logic with AI execution.</h2>
+        </div>
+        <div class="stack-board reveal">
+          <div class="stack-item"><strong>n8n</strong><span>Workflow orchestration</span></div>
+          <div class="stack-item"><strong>Make</strong><span>No-code automation</span></div>
+          <div class="stack-item"><strong>Google Sheets</strong><span>Lightweight operations layer</span></div>
+          <div class="stack-item"><strong>Power BI</strong><span>Business dashboards</span></div>
+          <div class="stack-item"><strong>AI Models</strong><span>Classification, reasoning, summarization</span></div>
+          <div class="stack-item"><strong>Airtable</strong><span>Learning next</span></div>
+        </div>
+      </section>
+
+      <section id="experience" class="section experience-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Background</p>
+          <h2>Business, research, and data experience behind the automation.</h2>
         </div>
         <div class="timeline">
-          <article>
+          <article class="reveal">
             <p class="date">May 2025 - Sep 2025</p>
-            <h3>Market Research Analyst · Certiff B.V.</h3>
+            <h3>Market Research Analyst - Certiff B.V.</h3>
             <p>
-              Worked on competitor analysis, funding opportunities, market entry research, and
+              Worked on competitor analysis, funding opportunities, market-entry research, and
               strategic partnership support for SkillsPass.
             </p>
           </article>
-          <article>
+          <article class="reveal">
             <p class="date">Mar 2023 - Oct 2023</p>
-            <h3>Data Analyst · Artificial Penetration Software Solutions Pvt. Ltd.</h3>
+            <h3>Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.</h3>
             <p>
               Built Power BI dashboards, cleaned structured datasets, and supported reporting
               workflows for business decision-making.
@@ -156,26 +161,23 @@
         </div>
       </section>
 
-      <section class="section education">
-        <div>
+      <section class="section education-section">
+        <div class="education-card reveal">
           <p class="eyebrow">Education</p>
-          <h2>Academic background.</h2>
-        </div>
-        <div class="education-grid">
-          <article>
+          <div>
             <h3>MBA in Corporate Finance</h3>
-            <p>ISTEC Business School · Paris, France</p>
-          </article>
-          <article>
+            <p>ISTEC Business School - Paris, France</p>
+          </div>
+          <div>
             <h3>BBA in Finance</h3>
-            <p>Osmania University · Hyderabad, India</p>
-          </article>
+            <p>Osmania University - Hyderabad, India</p>
+          </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
+      <section id="contact" class="section contact reveal">
         <p class="eyebrow">Contact</p>
-        <h2>Let’s build practical AI systems that actually save time.</h2>
+        <h2>Let us build AI systems that actually save time.</h2>
         <p>
           I am interested in roles and collaborations where business analysis, data thinking, and AI
           automation come together.
