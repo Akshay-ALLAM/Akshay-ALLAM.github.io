@@ -24,9 +24,23 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at 80% 0%, rgba(94, 160, 255, 0.22), transparent 32rem),
-    radial-gradient(circle at 8% 18%, rgba(49, 208, 125, 0.18), transparent 26rem),
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+    radial-gradient(circle at 82% 4%, rgba(94, 160, 255, 0.26), transparent 30rem),
+    radial-gradient(circle at 8% 18%, rgba(49, 208, 125, 0.2), transparent 28rem),
     var(--bg);
+  background-size: 44px 44px, 44px 44px, auto, auto;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 58%, rgba(8, 11, 16, 0.92) 100%),
+    linear-gradient(120deg, transparent, rgba(94, 160, 255, 0.08), transparent);
 }
 
 a {
@@ -71,11 +85,64 @@ nav a:hover {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 64px);
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
   align-items: center;
   gap: 2rem;
+}
+
+.hero-orbit {
+  position: absolute;
+  top: 10%;
+  right: 27%;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(94, 160, 255, 0.24);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 40px rgba(94, 160, 255, 0.18));
+  opacity: 0.8;
+}
+
+.hero-orbit::before,
+.hero-orbit::after {
+  position: absolute;
+  inset: 42px;
+  border: 1px solid rgba(49, 208, 125, 0.2);
+  border-radius: 50%;
+  content: "";
+}
+
+.hero-orbit::after {
+  inset: 92px;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.hero-orbit span {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 24px var(--green);
+}
+
+.hero-orbit span:nth-child(1) {
+  top: 28px;
+  left: 52%;
+}
+
+.hero-orbit span:nth-child(2) {
+  right: 36px;
+  bottom: 86px;
+  background: var(--blue);
+  box-shadow: 0 0 24px var(--blue);
+}
+
+.hero-orbit span:nth-child(3) {
+  left: 56px;
+  bottom: 56px;
 }
 
 .eyebrow {
@@ -97,9 +164,10 @@ p {
 h1 {
   max-width: 760px;
   margin-bottom: 1.25rem;
-  font-size: clamp(3.4rem, 8vw, 7.4rem);
+  font-size: clamp(3.2rem, 7vw, 6.8rem);
   line-height: 0.9;
   letter-spacing: -0.055em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -157,11 +225,47 @@ p {
 }
 
 .profile-panel {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1.5rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
   box-shadow: var(--shadow);
+}
+
+.ai-panel::before {
+  position: absolute;
+  top: -80px;
+  right: -90px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(49, 208, 125, 0.22);
+  content: "";
+  filter: blur(18px);
+}
+
+.status-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(49, 208, 125, 0.32);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  color: #c9ffe0;
+  background: rgba(49, 208, 125, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 6px rgba(49, 208, 125, 0.12);
 }
 
 .avatar {
@@ -176,6 +280,25 @@ p {
   margin-top: 1.2rem;
   margin-bottom: 0.3rem;
   font-size: 1.8rem;
+}
+
+.signal-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 1180px;
+  margin: -2rem auto 1rem;
+  padding: 0 1.4rem;
+}
+
+.signal-strip span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 0.88rem;
 }
 
 dl {
@@ -214,10 +337,21 @@ dd {
 .feature-card,
 .education-grid article,
 .timeline article {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1.25rem;
   background: rgba(255, 255, 255, 0.045);
+}
+
+.feature-card::before,
+.timeline article::before {
+  position: absolute;
+  inset: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--blue), transparent);
+  content: "";
 }
 
 .feature-card span,
@@ -302,6 +436,14 @@ dd {
   .education {
     min-height: auto;
     grid-template-columns: 1fr;
+  }
+
+  .hero-orbit {
+    top: 4rem;
+    right: 1rem;
+    width: 220px;
+    height: 220px;
+    opacity: 0.36;
   }
 
   h1 {
