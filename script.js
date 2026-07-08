@@ -18,13 +18,13 @@ function resize() {
   canvas.style.height = `${height}px`;
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  const count = Math.min(92, Math.max(42, Math.floor(width / 17)));
+  const count = Math.min(54, Math.max(24, Math.floor(width / 28)));
   particles = Array.from({ length: count }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.38,
-    vy: (Math.random() - 0.5) * 0.38,
-    r: Math.random() * 1.6 + 0.7,
+    vx: (Math.random() - 0.5) * 0.22,
+    vy: (Math.random() - 0.5) * 0.22,
+    r: Math.random() * 1.2 + 0.55,
   }));
 }
 
@@ -46,8 +46,8 @@ function draw() {
       const dy = a.y - b.y;
       const dist = Math.hypot(dx, dy);
       if (dist < 135) {
-        const alpha = (1 - dist / 135) * 0.18;
-        ctx.strokeStyle = `rgba(85, 231, 255, ${alpha})`;
+        const alpha = (1 - dist / 135) * 0.14;
+        ctx.strokeStyle = `rgba(86, 97, 61, ${alpha})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -61,7 +61,7 @@ function draw() {
     for (const p of particles) {
       const dist = Math.hypot(p.x - pointer.x, p.y - pointer.y);
       if (dist < 180) {
-        ctx.strokeStyle = `rgba(72, 255, 155, ${(1 - dist / 180) * 0.34})`;
+        ctx.strokeStyle = `rgba(185, 107, 75, ${(1 - dist / 180) * 0.22})`;
         ctx.beginPath();
         ctx.moveTo(pointer.x, pointer.y);
         ctx.lineTo(p.x, p.y);
@@ -71,7 +71,7 @@ function draw() {
   }
 
   for (const p of particles) {
-    ctx.fillStyle = "rgba(244, 248, 255, 0.78)";
+    ctx.fillStyle = "rgba(23, 24, 19, 0.36)";
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fill();
