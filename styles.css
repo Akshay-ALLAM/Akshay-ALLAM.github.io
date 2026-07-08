@@ -1021,10 +1021,388 @@ p {
 }
 
 .education-card {
+  position: relative;
   display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr 0.76fr 1.05fr;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.education-card::before {
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(86, 97, 61, 0.08);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 29% 42%, rgba(255, 153, 51, 0.12), transparent 8rem),
+    radial-gradient(circle at 74% 37%, rgba(0, 85, 164, 0.11), transparent 8rem);
+  content: "";
+  pointer-events: none;
+}
+
+.education-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+}
+
+.education-heading {
+  position: relative;
+  align-self: center;
+  z-index: 1;
+}
+
+.education-heading p:not(.eyebrow) {
+  max-width: 20rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.edu-stop {
+  display: grid;
+  align-content: space-between;
+  min-height: 240px;
+  border: 1px solid rgba(23, 24, 19, 0.1);
+  border-radius: 18px;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 18px 44px rgba(54, 48, 37, 0.08);
+  isolation: isolate;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.edu-stop:hover {
+  box-shadow: 0 22px 60px rgba(54, 48, 37, 0.13);
+  transform: translateY(-4px);
+}
+
+.edu-stop::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(23, 24, 19, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 24, 19, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  content: "";
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.edu-stop.india {
+  background:
+    linear-gradient(145deg, rgba(255, 153, 51, 0.13), rgba(255, 255, 255, 0.16) 45%),
+    radial-gradient(circle at 22% 30%, rgba(255, 153, 51, 0.2), transparent 7rem),
+    rgba(255, 255, 255, 0.32);
+}
+
+.edu-stop.france {
+  background:
+    linear-gradient(145deg, rgba(0, 85, 164, 0.11), rgba(255, 255, 255, 0.16) 45%),
+    radial-gradient(circle at 82% 28%, rgba(0, 85, 164, 0.16), transparent 7rem),
+    rgba(255, 255, 255, 0.32);
+}
+
+.edu-stop.india::after,
+.edu-stop.france::after {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid rgba(86, 97, 61, 0.12);
+  border-radius: 50%;
+  content: "";
+  opacity: 0.7;
+  animation: eduOrbit 7s linear infinite;
+}
+
+.edu-place {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  z-index: 1;
+}
+
+.edu-place small {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flag {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 22px;
+  border: 1px solid rgba(23, 24, 19, 0.16);
+  border-radius: 5px;
+  color: transparent;
+  font-size: 0;
+  box-shadow: 0 8px 18px rgba(54, 48, 37, 0.12);
+  animation: flagWave 2.6s ease-in-out infinite;
+}
+
+.india .flag {
+  background:
+    linear-gradient(#ff9933 0 33%, #fff 33% 66%, #138808 66%),
+    #fff;
+}
+
+.france .flag {
+  background: linear-gradient(90deg, #0055a4 0 33%, #fff 33% 66%, #ef4135 66%);
+  animation-delay: 0.35s;
+}
+
+.charminar {
+  position: relative;
+  width: 82px;
+  height: 78px;
+  filter: drop-shadow(0 14px 18px rgba(185, 107, 75, 0.18));
+  animation: landmarkFloat 3.8s ease-in-out infinite;
+}
+
+.charminar i {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 58px;
+  border: 2px solid rgba(185, 107, 75, 0.7);
+  border-radius: 12px 12px 4px 4px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.charminar i::before {
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50% 50% 4px 4px;
+  background: #b96b4b;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.charminar i:nth-child(1) { left: 0; }
+.charminar i:nth-child(2) { left: 22px; height: 48px; }
+.charminar i:nth-child(3) { right: 22px; height: 48px; }
+.charminar i:nth-child(4) { right: 0; }
+
+.charminar b {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 18px;
+  height: 23px;
+  border: 2px solid rgba(185, 107, 75, 0.7);
+  border-radius: 18px 18px 5px 5px;
+  background: rgba(185, 107, 75, 0.12);
+}
+
+.charminar b::after {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 18px;
+  height: 15px;
+  border-radius: 12px 12px 2px 2px;
+  background: rgba(185, 107, 75, 0.45);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.eiffel {
+  position: relative;
+  width: 78px;
+  height: 86px;
+  filter: drop-shadow(0 14px 18px rgba(86, 97, 61, 0.16));
+  animation: landmarkFloat 3.8s ease-in-out infinite 0.45s;
+}
+
+.eiffel::before,
+.eiffel::after {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  height: 82px;
+  border-radius: 999px;
+  background: #56613d;
+  content: "";
+  transform-origin: bottom;
+}
+
+.eiffel::before {
+  left: 30px;
+  transform: rotate(14deg);
+}
+
+.eiffel::after {
+  right: 30px;
+  transform: rotate(-14deg);
+}
+
+.eiffel i {
+  position: absolute;
+  left: 50%;
+  width: 52px;
+  height: 3px;
+  border-radius: 999px;
+  background: #56613d;
+  transform: translateX(-50%);
+}
+
+.eiffel i:nth-child(1) { top: 24px; width: 18px; }
+.eiffel i:nth-child(2) { top: 47px; }
+.eiffel i:nth-child(3) { bottom: 12px; width: 68px; }
+
+.flight-path {
+  position: relative;
+  height: 116px;
+  align-self: center;
+  z-index: 1;
+}
+
+.flight-path strong,
+.flight-path em {
+  position: absolute;
+  left: 0;
+  color: var(--olive);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.flight-path strong {
+  top: 1rem;
+}
+
+.flight-path em {
+  right: 0;
+  bottom: 0.9rem;
+  left: auto;
+}
+
+.flight-path span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 46px;
+  border-top: 2px dashed rgba(86, 97, 61, 0.44);
+  border-radius: 50% 50% 0 0;
+  transform: translateY(-50%);
+}
+
+.flight-path span::before,
+.flight-path span::after {
+  position: absolute;
+  top: -6px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  border-radius: 50%;
+  background: var(--olive);
+  box-shadow: 0 0 0 8px rgba(86, 97, 61, 0.09);
+  content: "";
+}
+
+.flight-path span::before {
+  left: 0;
+}
+
+.flight-path span::after {
+  right: 0;
+  animation: routePulse 1.8s ease-in-out infinite;
+}
+
+.flight-path i {
+  position: absolute;
+  left: 0;
+  top: 29%;
+  width: 34px;
+  height: 18px;
+  color: var(--clay);
+  animation: flightMove 4.4s ease-in-out infinite;
+}
+
+.flight-path i::before {
+  position: absolute;
+  inset: 6px 4px 6px 0;
+  border-radius: 999px 8px 8px 999px;
+  background: linear-gradient(90deg, var(--clay), #f3c085);
+  box-shadow: 0 8px 20px rgba(185, 107, 75, 0.24);
+  content: "";
+}
+
+.flight-path i::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 11px solid #b96b4b;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.flight-path i b {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 11px;
+  height: 18px;
+  background: #b96b4b;
+  clip-path: polygon(0 42%, 100% 0, 100% 100%, 0 58%);
+}
+
+.flight-path i b::after {
+  position: absolute;
+  left: 2px;
+  bottom: -3px;
+  width: 9px;
+  height: 8px;
+  background: #8d513b;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 70%);
+  content: "";
+}
+
+.edu-detail {
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
+}
+
+.edu-stop .edu-detail {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  border-left: 0;
+  padding-top: 1rem;
+  padding-left: 0;
+}
+
+.edu-detail span {
+  display: inline-flex;
+  margin-bottom: 0.65rem;
+  border: 1px solid rgba(86, 97, 61, 0.22);
+  border-radius: 999px;
+  padding: 0.34rem 0.6rem;
+  color: var(--olive);
+  background: rgba(86, 97, 61, 0.07);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .contact {
@@ -1140,6 +1518,33 @@ p {
   50% { transform: translateX(110%); opacity: 1; }
 }
 
+@keyframes flightMove {
+  0% { left: -6px; top: 43%; opacity: 0; transform: rotate(12deg) scale(0.8); }
+  15% { opacity: 1; }
+  50% { top: 10%; transform: rotate(5deg) scale(1); }
+  85% { opacity: 1; }
+  100% { left: calc(100% - 32px); top: 42%; opacity: 0; transform: rotate(18deg) scale(0.82); }
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(-2px); }
+}
+
+@keyframes routePulse {
+  0%, 100% { box-shadow: 0 0 0 7px rgba(86, 97, 61, 0.08); transform: scale(1); }
+  50% { box-shadow: 0 0 0 13px rgba(86, 97, 61, 0.02); transform: scale(1.14); }
+}
+
+@keyframes landmarkFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes eduOrbit {
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 900px) {
   .site-header {
     position: static;
@@ -1195,6 +1600,32 @@ p {
 
   .ai-console {
     transform: none;
+  }
+
+  .education-card {
+    grid-template-columns: 1fr;
+  }
+
+  .education-heading {
+    text-align: left;
+  }
+
+  .edu-stop {
+    min-height: auto;
+  }
+
+  .flight-path {
+    width: 70%;
+    height: 76px;
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+
+  .edu-detail {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    padding-left: 0;
   }
 
   .cursor-dot {
