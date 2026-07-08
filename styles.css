@@ -28,9 +28,9 @@ body {
   color: var(--text);
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 15% 20%, rgba(85, 231, 255, 0.16), transparent 28rem),
-    radial-gradient(circle at 85% 10%, rgba(255, 79, 216, 0.16), transparent 28rem),
-    radial-gradient(circle at 70% 80%, rgba(72, 255, 155, 0.12), transparent 30rem),
+    radial-gradient(circle at 18% 18%, rgba(85, 231, 255, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 12%, rgba(111, 125, 255, 0.13), transparent 30rem),
+    radial-gradient(circle at 65% 88%, rgba(72, 255, 155, 0.08), transparent 34rem),
     var(--bg);
 }
 
@@ -63,15 +63,6 @@ body::after {
   z-index: -4;
   width: 100%;
   height: 100%;
-}
-
-#three-scene {
-  position: fixed;
-  inset: 0;
-  z-index: -5;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
 
 .cursor-glow {
@@ -288,17 +279,18 @@ p {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
     rgba(10, 16, 28, 0.76);
-  box-shadow: var(--shadow), 0 0 80px rgba(85, 231, 255, 0.12);
+  box-shadow: var(--shadow), 0 0 54px rgba(85, 231, 255, 0.08);
   transform-style: preserve-3d;
   animation: floatPanel 6s ease-in-out infinite;
 }
 
 .ai-console::before {
   position: absolute;
-  inset: -40%;
-  background: conic-gradient(from 90deg, transparent, rgba(85, 231, 255, 0.2), transparent, rgba(255, 79, 216, 0.12), transparent);
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(85, 231, 255, 0.08), transparent 42%),
+    radial-gradient(circle at 85% 15%, rgba(72, 255, 155, 0.1), transparent 24rem);
   content: "";
-  animation: spin 11s linear infinite;
 }
 
 .console-top,
@@ -608,10 +600,6 @@ p {
 @keyframes floatPanel {
   0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
   50% { transform: translateY(-14px) rotateX(2deg) rotateY(-3deg); }
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 @keyframes scan {
