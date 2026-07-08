@@ -37,6 +37,17 @@ body.loading {
   overflow: hidden;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clay), var(--olive), var(--moss));
+  box-shadow: 0 0 22px rgba(86, 97, 61, 0.18);
+}
+
 body::before {
   position: fixed;
   inset: 0;
@@ -393,6 +404,29 @@ p {
   font-size: 1.16rem;
 }
 
+.signal-panel {
+  display: grid;
+  gap: 0.28rem;
+  width: min(100%, 560px);
+  margin-top: 1.25rem;
+  border-left: 3px solid var(--olive);
+  padding: 0.75rem 0 0.75rem 1rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.46), transparent);
+}
+
+.signal-panel span {
+  color: var(--clay);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.signal-panel strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -618,6 +652,35 @@ p {
   color: var(--clay);
 }
 
+.console-meter {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.console-meter i {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(86, 97, 61, 0.18);
+  overflow: hidden;
+}
+
+.console-meter i::after {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--olive);
+  content: "";
+  animation: meterFlow 1.8s ease-in-out infinite;
+}
+
+.console-meter i:nth-child(2)::after { animation-delay: 0.16s; }
+.console-meter i:nth-child(3)::after { animation-delay: 0.32s; }
+.console-meter i:nth-child(4)::after { animation-delay: 0.48s; }
+.console-meter i:nth-child(5)::after { animation-delay: 0.64s; }
+
 .marquee {
   overflow: hidden;
   border-block: 1px solid var(--line);
@@ -660,7 +723,7 @@ p {
   border-radius: 22px;
   background: rgba(251, 247, 239, 0.68);
   box-shadow: 0 18px 56px rgba(54, 48, 37, 0.08);
-  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
 
 .system-card,
@@ -675,6 +738,7 @@ p {
 .stack-item:hover {
   border-color: rgba(86, 97, 61, 0.34);
   background: rgba(251, 247, 239, 0.92);
+  box-shadow: 0 26px 68px rgba(54, 48, 37, 0.14);
   transform: translateY(-5px);
 }
 
@@ -1047,6 +1111,11 @@ p {
 @keyframes blockTilt {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-5px) rotate(-4deg); }
+}
+
+@keyframes meterFlow {
+  0%, 100% { transform: translateX(-80%); opacity: 0.35; }
+  50% { transform: translateX(110%); opacity: 1; }
 }
 
 @media (max-width: 900px) {

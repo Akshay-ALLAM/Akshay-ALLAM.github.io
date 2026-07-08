@@ -2,6 +2,7 @@ const canvas = document.getElementById("neural-canvas");
 const ctx = canvas.getContext("2d");
 const cursorGlow = document.querySelector(".cursor-glow");
 const cursorDot = document.querySelector(".cursor-dot");
+const scrollProgress = document.querySelector(".scroll-progress");
 const reveals = document.querySelectorAll(".reveal");
 const loader = document.querySelector(".loader");
 const loaderCount = document.querySelector(".loader-count");
@@ -103,7 +104,15 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+}
+
 window.addEventListener("resize", resize);
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("pointermove", (event) => {
   pointer = { x: event.clientX, y: event.clientY, active: true };
   if (cursorGlow) {
@@ -142,4 +151,5 @@ for (const item of magneticItems) {
 
 runLoader();
 resize();
+updateScrollProgress();
 draw();
