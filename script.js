@@ -1,12 +1,35 @@
 const canvas = document.getElementById("neural-canvas");
 const ctx = canvas.getContext("2d");
 const cursorGlow = document.querySelector(".cursor-glow");
+const cursorDot = document.querySelector(".cursor-dot");
 const reveals = document.querySelectorAll(".reveal");
+const loader = document.querySelector(".loader");
+const loaderCount = document.querySelector(".loader-count");
+const magneticItems = document.querySelectorAll("a, button, .system-card, .stack-item, .timeline article, .education-card");
 
 let width = 0;
 let height = 0;
 let particles = [];
 let pointer = { x: 0, y: 0, active: false };
+
+document.body.classList.add("loading");
+
+function runLoader() {
+  if (!loader || !loaderCount) return;
+
+  let progress = 0;
+  const timer = window.setInterval(() => {
+    progress = Math.min(100, progress + Math.ceil(Math.random() * 9));
+    loaderCount.textContent = `${progress}%`;
+    if (progress >= 100) {
+      window.clearInterval(timer);
+      window.setTimeout(() => {
+        loader.classList.add("done");
+        document.body.classList.remove("loading");
+      }, 220);
+    }
+  }, 70);
+}
 
 function resize() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -87,6 +110,10 @@ window.addEventListener("pointermove", (event) => {
     cursorGlow.style.left = `${event.clientX}px`;
     cursorGlow.style.top = `${event.clientY}px`;
   }
+  if (cursorDot) {
+    cursorDot.style.left = `${event.clientX}px`;
+    cursorDot.style.top = `${event.clientY}px`;
+  }
 });
 
 window.addEventListener("pointerleave", () => {
@@ -108,5 +135,11 @@ for (const item of reveals) {
   observer.observe(item);
 }
 
+for (const item of magneticItems) {
+  item.addEventListener("pointerenter", () => cursorDot?.classList.add("active"));
+  item.addEventListener("pointerleave", () => cursorDot?.classList.remove("active"));
+}
+
+runLoader();
 resize();
 draw();

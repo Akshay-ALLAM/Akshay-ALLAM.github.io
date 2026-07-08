@@ -33,6 +33,10 @@ body {
     linear-gradient(135deg, #f8f0df 0%, #f4efe4 42%, #ebe2d0 100%);
 }
 
+body.loading {
+  overflow: hidden;
+}
+
 body::before {
   position: fixed;
   inset: 0;
@@ -77,6 +81,135 @@ body::after {
   pointer-events: none;
   background: radial-gradient(circle, rgba(185, 107, 75, 0.14), transparent 64%);
   transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  position: fixed;
+  z-index: 60;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(251, 247, 239, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  background: var(--ink);
+  box-shadow: 0 0 0 10px rgba(23, 24, 19, 0.08);
+  transform: translate(-50%, -50%);
+  transition: width 180ms ease, height 180ms ease, background 180ms ease;
+}
+
+.cursor-dot.active {
+  width: 30px;
+  height: 30px;
+  background: rgba(86, 97, 61, 0.78);
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  padding: 2.2rem;
+  color: var(--paper-soft);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(185, 107, 75, 0.72), transparent 16rem),
+    radial-gradient(circle at 88% 80%, rgba(86, 97, 61, 0.54), transparent 22rem),
+    #050810;
+  transition: opacity 650ms ease, visibility 650ms ease, transform 650ms ease;
+}
+
+.loader.done {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-3%);
+}
+
+.loader-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.loader-track {
+  align-self: center;
+  overflow: hidden;
+  border-block: 1px solid rgba(251, 247, 239, 0.14);
+  padding: 1.2rem 0;
+}
+
+.loader-track div {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  animation: loaderMarquee 10s linear infinite;
+}
+
+.loader-track span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(251, 247, 239, 0.86);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.loader-count {
+  justify-self: end;
+  margin: 0;
+  color: var(--paper-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.85;
+}
+
+.motion-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.motion-orbs span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(0.2px);
+  mix-blend-mode: multiply;
+  opacity: 0.42;
+}
+
+.motion-orbs span:nth-child(1) {
+  top: 14%;
+  left: -4rem;
+  width: 8rem;
+  height: 8rem;
+  background: radial-gradient(circle at 35% 35%, #d98060, #9d4f3b 62%, transparent 64%);
+  animation: driftOne 16s ease-in-out infinite;
+}
+
+.motion-orbs span:nth-child(2) {
+  right: 8%;
+  bottom: 14%;
+  width: 6rem;
+  height: 6rem;
+  background: radial-gradient(circle at 35% 35%, #9ca66f, #56613d 64%, transparent 66%);
+  animation: driftTwo 18s ease-in-out infinite;
+}
+
+.motion-orbs span:nth-child(3) {
+  top: 26%;
+  right: 24%;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: radial-gradient(circle at 35% 35%, #fbf7ef, #b96b4b 66%, transparent 68%);
+  animation: driftThree 13s ease-in-out infinite;
 }
 
 a {
@@ -150,6 +283,10 @@ nav a:hover {
   gap: 4rem;
 }
 
+.hero > * {
+  min-width: 0;
+}
+
 .eyebrow {
   margin: 0 0 1rem;
   color: var(--olive);
@@ -167,6 +304,7 @@ p {
 }
 
 h1 {
+  width: 100%;
   max-width: 780px;
   margin-bottom: 1.25rem;
   font-family: Georgia, "Times New Roman", serif;
@@ -180,6 +318,52 @@ h1 {
 h1 em {
   color: var(--olive);
   font-style: italic;
+}
+
+.role-reel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 0 1.2rem;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  color: var(--clay);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.role-reel::before,
+.role-reel::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 4rem;
+  content: "";
+}
+
+.role-reel::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--paper), transparent);
+}
+
+.role-reel::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--paper), transparent);
+}
+
+.role-reel div {
+  display: flex;
+  width: max-content;
+  animation: roleFloat 18s linear infinite;
+}
+
+.role-reel span {
+  padding: 0.9rem 1.1rem 0.9rem 0;
+  white-space: nowrap;
 }
 
 h2 {
@@ -203,6 +387,7 @@ p {
 }
 
 .hero-text {
+  width: 100%;
   max-width: 680px;
   color: #4f4b42;
   font-size: 1.16rem;
@@ -249,6 +434,7 @@ p {
 
 .metrics {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.7rem;
   max-width: 720px;
@@ -572,6 +758,14 @@ p {
   50% { transform: translateX(14%); opacity: 0.42; }
 }
 
+@keyframes loaderMarquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes roleFloat {
+  to { transform: translateX(-50%); }
+}
+
 @keyframes cardFloat {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-10px) rotate(0.6deg); }
@@ -584,6 +778,21 @@ p {
 
 @keyframes marquee {
   to { transform: translateX(-50%); }
+}
+
+@keyframes driftOne {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3rem, 2.4rem, 0) scale(0.82); }
+}
+
+@keyframes driftTwo {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-2.6rem, -3.2rem, 0) scale(1.18); }
+}
+
+@keyframes driftThree {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(1.8rem, -2rem, 0) scale(1.22); }
 }
 
 @media (max-width: 900px) {
@@ -635,6 +844,18 @@ p {
 
   .ai-console {
     transform: none;
+  }
+
+  .cursor-dot {
+    display: none;
+  }
+
+  .loader {
+    padding: 1rem;
+  }
+
+  .loader-track span {
+    font-size: clamp(2.7rem, 18vw, 5rem);
   }
 }
 
