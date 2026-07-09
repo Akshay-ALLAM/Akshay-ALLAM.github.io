@@ -150,7 +150,7 @@ body::after {
   position: relative;
   align-self: center;
   display: grid;
-  min-height: min(68vh, 620px);
+  min-height: min(72vh, 650px);
   overflow: hidden;
   border: 1px solid rgba(251, 247, 239, 0.12);
   border-radius: 32px;
@@ -176,11 +176,11 @@ body::after {
 
 .loader-photo {
   position: absolute;
-  inset: -6%;
+  inset: -3%;
   z-index: 0;
   background:
     linear-gradient(90deg, rgba(5, 5, 5, 0.96), rgba(5, 5, 5, 0.22) 42%, rgba(5, 5, 5, 0.82)),
-    url("assets/akshay-studio-hero.jpg") center right / cover no-repeat;
+    url("assets/akshay-studio-hero.jpg") center 18% / cover no-repeat;
   filter: saturate(0.86) contrast(0.94);
   opacity: 0;
   transform: scale(1.08);
@@ -193,7 +193,7 @@ body::after {
   display: grid;
   align-content: center;
   justify-items: start;
-  gap: 1.1rem;
+  gap: 1.35rem;
   max-width: 1040px;
   padding: clamp(2rem, 5vw, 5rem);
 }
@@ -212,13 +212,13 @@ body::after {
 
 .intro-name {
   display: grid;
-  gap: 0.03em;
+  gap: 0.1em;
   max-width: 100%;
   overflow: hidden;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.4rem, 9.2vw, 8.6rem);
+  font-size: clamp(3.2rem, 7.8vw, 7.4rem);
   font-weight: 700;
-  line-height: 0.82;
+  line-height: 0.78;
   letter-spacing: -0.045em;
 }
 
@@ -229,7 +229,7 @@ body::after {
 }
 
 .intro-word:nth-child(2) {
-  margin-left: clamp(3.2rem, 8vw, 9rem);
+  margin-left: clamp(4.4rem, 10vw, 10.5rem);
 }
 
 .intro-name b {
@@ -2000,12 +2000,12 @@ p {
   }
 
   .loader-stage {
-    min-height: 62vh;
+    min-height: 66vh;
     border-radius: 22px;
   }
 
   .loader-photo {
-    background-position: 62% center;
+    background-position: 56% center;
     opacity: 0.38;
   }
 
@@ -2014,11 +2014,11 @@ p {
   }
 
   .intro-name {
-    font-size: clamp(3.1rem, 18vw, 5.6rem);
+    font-size: clamp(2.85rem, 16vw, 5.1rem);
   }
 
   .intro-word:nth-child(2) {
-    margin-left: clamp(2rem, 14vw, 4rem);
+    margin-left: clamp(2.4rem, 18vw, 4.8rem);
   }
 
   h1 {
