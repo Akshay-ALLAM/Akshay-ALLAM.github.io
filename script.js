@@ -20,16 +20,16 @@ function runLoader() {
 
   let progress = 0;
   const timer = window.setInterval(() => {
-    progress = Math.min(100, progress + Math.ceil(Math.random() * 9));
-    loaderCount.textContent = `${progress}%`;
+    progress = Math.min(100, progress + Math.ceil(Math.random() * 8));
+    loaderCount.textContent = progress < 100 ? `Loading ${progress}%` : "Entering portfolio";
     if (progress >= 100) {
       window.clearInterval(timer);
       window.setTimeout(() => {
         loader.classList.add("done");
-        document.body.classList.remove("loading");
-      }, 220);
+        window.setTimeout(() => document.body.classList.remove("loading"), 850);
+      }, 1150);
     }
-  }, 70);
+  }, 95);
 }
 
 function resize() {
