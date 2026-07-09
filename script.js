@@ -18,18 +18,19 @@ document.body.classList.add("loading");
 function runLoader() {
   if (!loader || !loaderCount) return;
 
-  let progress = 0;
+  const introDuration = 4000;
+  const startedAt = Date.now();
   const timer = window.setInterval(() => {
-    progress = Math.min(100, progress + Math.ceil(Math.random() * 8));
+    const progress = Math.min(100, Math.round(((Date.now() - startedAt) / introDuration) * 100));
     loaderCount.textContent = progress < 100 ? `Loading ${progress}%` : "Entering portfolio";
     if (progress >= 100) {
       window.clearInterval(timer);
       window.setTimeout(() => {
         loader.classList.add("done");
         window.setTimeout(() => document.body.classList.remove("loading"), 850);
-      }, 1150);
+      }, 250);
     }
-  }, 95);
+  }, 100);
 }
 
 function resize() {
