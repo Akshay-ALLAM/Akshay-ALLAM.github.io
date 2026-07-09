@@ -1210,6 +1210,93 @@ p {
   gap: 1rem;
 }
 
+.education-moment {
+  --moment-progress: 0;
+  padding-top: 2.8rem;
+  padding-bottom: 1.8rem;
+}
+
+.education-moment-card {
+  position: relative;
+  min-height: clamp(420px, 62vh, 660px);
+  overflow: hidden;
+  border: 1px solid rgba(23, 24, 19, 0.12);
+  border-radius: 30px;
+  box-shadow: 0 34px 90px rgba(54, 48, 37, 0.18);
+  isolation: isolate;
+  transform: scale(calc(0.965 + (var(--moment-progress) * 0.035)));
+}
+
+.education-moment-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: saturate(calc(0.92 + (var(--moment-progress) * 0.1))) contrast(1.03);
+  transform: scale(calc(1.08 - (var(--moment-progress) * 0.05)));
+  transition: transform 160ms linear, filter 160ms linear;
+}
+
+.education-moment-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.2), transparent 15rem),
+    linear-gradient(90deg, rgba(8, 9, 7, 0.86) 0%, rgba(8, 9, 7, 0.48) 42%, rgba(8, 9, 7, 0.22) 100%);
+  content: "";
+  opacity: calc(0.86 - (var(--moment-progress) * 0.28));
+  pointer-events: none;
+}
+
+.education-moment-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  content: "";
+  opacity: calc(0.28 - (var(--moment-progress) * 0.16));
+  pointer-events: none;
+}
+
+.education-moment-shade {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  height: 42%;
+  background: linear-gradient(to top, rgba(8, 9, 7, 0.72), transparent);
+  pointer-events: none;
+}
+
+.education-moment-copy {
+  position: absolute;
+  left: clamp(1.4rem, 5vw, 5rem);
+  bottom: clamp(1.6rem, 6vw, 4.6rem);
+  z-index: 4;
+  max-width: 34rem;
+  color: #fffdf7;
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  transform: translateY(calc((1 - var(--moment-progress)) * 24px));
+  opacity: calc(0.72 + (var(--moment-progress) * 0.28));
+}
+
+.education-moment-copy .eyebrow {
+  color: rgba(255, 253, 247, 0.82);
+}
+
+.education-moment-copy h2 {
+  margin: 0;
+  max-width: 28rem;
+  color: #fffdf7;
+  font-size: clamp(2.4rem, 6vw, 5.7rem);
+  line-height: 0.94;
+}
+
 .education-card {
   position: relative;
   display: grid;
@@ -1929,6 +2016,14 @@ p {
   100% { left: calc(100% - 32px); top: 42%; opacity: 0; transform: rotate(18deg) scale(0.82); }
 }
 
+@keyframes flightMoveMobile {
+  0% { top: 2px; opacity: 0; transform: rotate(92deg) scale(0.8); }
+  16% { opacity: 1; }
+  52% { transform: rotate(88deg) scale(1); }
+  86% { opacity: 1; }
+  100% { top: calc(100% - 22px); opacity: 0; transform: rotate(94deg) scale(0.82); }
+}
+
 @keyframes flagWave {
   0%, 100% { transform: rotate(-2deg) translateY(0); }
   50% { transform: rotate(2deg) translateY(-2px); }
@@ -2050,6 +2145,37 @@ p {
     padding: 3.6rem 1rem;
   }
 
+  .education-moment {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .education-moment-card {
+    min-height: 480px;
+    border-radius: 24px;
+  }
+
+  .education-moment-card img {
+    object-position: 48% center;
+  }
+
+  .education-moment-card::before {
+    background:
+      radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.18), transparent 13rem),
+      linear-gradient(180deg, rgba(8, 9, 7, 0.28) 0%, rgba(8, 9, 7, 0.38) 44%, rgba(8, 9, 7, 0.78) 100%);
+  }
+
+  .education-moment-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 1.4rem;
+  }
+
+  .education-moment-copy h2 {
+    max-width: 19rem;
+    font-size: clamp(2.35rem, 13vw, 4.2rem);
+  }
+
   .ai-console {
     transform: none;
   }
@@ -2067,10 +2193,55 @@ p {
   }
 
   .flight-path {
-    width: 70%;
-    height: 76px;
-    margin: 0 auto;
-    transform: rotate(90deg);
+    width: 100%;
+    height: 104px;
+    margin: -0.2rem auto;
+    transform: none;
+  }
+
+  .flight-path strong,
+  .flight-path em {
+    left: calc(50% + 1.1rem);
+    right: auto;
+    font-size: 0.62rem;
+  }
+
+  .flight-path strong {
+    top: 0.45rem;
+  }
+
+  .flight-path em {
+    bottom: 0.45rem;
+  }
+
+  .flight-path span {
+    left: 50%;
+    right: auto;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-top: 0;
+    border-left: 2px dashed rgba(86, 97, 61, 0.44);
+    border-radius: 999px;
+    transform: none;
+  }
+
+  .flight-path span::before,
+  .flight-path span::after {
+    left: -6px;
+    right: auto;
+    top: 0;
+  }
+
+  .flight-path span::after {
+    top: auto;
+    bottom: 0;
+  }
+
+  .flight-path i {
+    left: calc(50% - 17px);
+    top: 0;
+    animation: flightMoveMobile 4s ease-in-out infinite;
   }
 
   .edu-detail {

@@ -6,6 +6,7 @@ const scrollProgress = document.querySelector(".scroll-progress");
 const reveals = document.querySelectorAll(".reveal");
 const loader = document.querySelector(".loader");
 const loaderCount = document.querySelector(".loader-count");
+const educationMoment = document.querySelector(".education-moment");
 const magneticItems = document.querySelectorAll("a, button, .system-card, .stack-item, .timeline article, .education-card");
 
 let width = 0;
@@ -110,6 +111,13 @@ function updateScrollProgress() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
   scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+
+  if (educationMoment) {
+    const box = educationMoment.getBoundingClientRect();
+    const rawProgress = (window.innerHeight - box.top) / (window.innerHeight + box.height * 0.65);
+    const momentProgress = Math.min(1, Math.max(0, rawProgress));
+    educationMoment.style.setProperty("--moment-progress", momentProgress.toFixed(3));
+  }
 }
 
 window.addEventListener("resize", resize);
