@@ -176,14 +176,14 @@ body::after {
 
 .loader-photo {
   position: absolute;
-  inset: -3%;
+  inset: 0;
   z-index: 0;
   background:
-    linear-gradient(90deg, rgba(5, 5, 5, 0.96), rgba(5, 5, 5, 0.22) 42%, rgba(5, 5, 5, 0.82)),
-    url("assets/akshay-studio-hero.jpg") center 18% / cover no-repeat;
+    linear-gradient(90deg, rgba(5, 5, 5, 0.96), rgba(5, 5, 5, 0.38) 38%, rgba(5, 5, 5, 0.82)),
+    url("assets/akshay-studio-hero.jpg") center right / contain no-repeat;
   filter: saturate(0.86) contrast(0.94);
   opacity: 0;
-  transform: scale(1.08);
+  transform: scale(1.02);
   animation: loaderPhotoReveal 3.6s ease forwards;
 }
 
@@ -1820,9 +1820,9 @@ p {
 }
 
 @keyframes loaderPhotoReveal {
-  0% { opacity: 0; transform: scale(1.12) translateX(1.4rem); }
+  0% { opacity: 0; transform: scale(1.04) translateX(1rem); }
   28% { opacity: 0.72; }
-  100% { opacity: 0.52; transform: scale(1.03) translateX(0); }
+  100% { opacity: 0.58; transform: scale(1) translateX(0); }
 }
 
 @keyframes welcomeRise {
@@ -2000,7 +2000,7 @@ p {
   }
 
   .loader-stage {
-    min-height: 66vh;
+    min-height: 48vh;
     border-radius: 22px;
   }
 
@@ -2010,11 +2010,11 @@ p {
   }
 
   .loader-copy {
-    padding: 1.35rem;
+    padding: 1.2rem;
   }
 
   .intro-name {
-    font-size: clamp(2.85rem, 16vw, 5.1rem);
+    font-size: clamp(2.65rem, 15vw, 4.8rem);
   }
 
   .intro-word:nth-child(2) {
