@@ -1020,37 +1020,17 @@ p {
 }
 
 .casework-meta {
-  display: grid;
-  gap: 0.45rem;
   margin-top: 1.25rem;
   border-top: 1px solid rgba(86, 97, 61, 0.16);
   padding-top: 0.95rem;
 }
 
 .casework-meta p {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
   margin: 0;
   color: var(--muted);
-  line-height: 1.45;
-}
-
-.casework-meta strong {
-  min-width: 5.4rem;
-  color: var(--olive);
-  font-size: 0.66rem;
-  font-weight: 900;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.casework-meta span {
-  color: #4f4b42;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.55;
 }
 
 .stack-board {
