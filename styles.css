@@ -212,7 +212,7 @@ body::after {
 
 .intro-name {
   display: grid;
-  gap: 0.02em;
+  gap: 0.03em;
   max-width: 100%;
   overflow: hidden;
   font-family: Georgia, "Times New Roman", serif;
@@ -226,6 +226,10 @@ body::after {
   display: flex;
   gap: 0.01em;
   white-space: nowrap;
+}
+
+.intro-word:nth-child(2) {
+  margin-left: clamp(3.2rem, 8vw, 9rem);
 }
 
 .intro-name b {
@@ -2011,6 +2015,10 @@ p {
 
   .intro-name {
     font-size: clamp(3.1rem, 18vw, 5.6rem);
+  }
+
+  .intro-word:nth-child(2) {
+    margin-left: clamp(2rem, 14vw, 4rem);
   }
 
   h1 {
