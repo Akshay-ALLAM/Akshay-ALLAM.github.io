@@ -320,14 +320,51 @@ nav a:hover {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 76px);
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
   align-items: center;
   gap: 4rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0 -2rem auto 24%;
+  height: min(82vh, 760px);
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(244, 239, 228, 0.98), rgba(244, 239, 228, 0.7) 32%, rgba(244, 239, 228, 0.22) 70%),
+    linear-gradient(180deg, rgba(244, 239, 228, 0.12), rgba(244, 239, 228, 0.78)),
+    url("assets/akshay-studio-hero.jpg") center right / cover no-repeat;
+  box-shadow: inset 0 0 80px rgba(244, 239, 228, 0.64);
+  content: "";
+  filter: saturate(0.76) contrast(0.92) sepia(0.08);
+  opacity: 0.3;
+  pointer-events: none;
+  transform: scale(1.03);
+  animation: heroPhotoDrift 18s ease-in-out infinite;
+  mask-image: linear-gradient(90deg, transparent 0%, black 22%, black 72%, transparent 100%);
+}
+
+.hero::after {
+  position: absolute;
+  right: 3rem;
+  bottom: 4rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 107, 75, 0.16), transparent 68%);
+  content: "";
+  opacity: 0.9;
+  pointer-events: none;
+  animation: driftThree 13s ease-in-out infinite;
 }
 
 .hero > * {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
@@ -1679,6 +1716,11 @@ p {
   50% { transform: translateX(14%); opacity: 0.42; }
 }
 
+@keyframes heroPhotoDrift {
+  0%, 100% { transform: scale(1.03) translate3d(0, 0, 0); opacity: 0.26; }
+  50% { transform: scale(1.08) translate3d(-1.6rem, 0.8rem, 0); opacity: 0.38; }
+}
+
 @keyframes loaderMarquee {
   to { transform: translateX(-50%); }
 }
@@ -1823,6 +1865,17 @@ p {
     min-height: auto;
     gap: 2rem;
     padding-top: 3rem;
+  }
+
+  .hero::before {
+    inset: 0;
+    height: 46vh;
+    opacity: 0.18;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 92%);
+  }
+
+  .hero::after {
+    display: none;
   }
 
   h1 {
