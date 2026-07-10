@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akshay Allam | AI Automation Portfolio</title>
+    <meta
+      name="description"
+      content="Cinematic AI automation portfolio for Akshay Allam, an AI Automation Builder and Strategy & Data Analyst based in Paris, France."
+    />
+    <link rel="preconnect" href="https://github.com" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2303050a'/%3E%3Cpath d='M14 40 28 14h8l14 26h-8l-3-6H25l-3 6h-8Zm14-12h8l-4-8-4 8Z' fill='%2355e7ff'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2348ff9b'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="loader" aria-hidden="true">
+      <div class="loader-top">
+        <span>AA</span>
+        <span>AI Automation Portfolio</span>
+      </div>
+      <div class="loader-stage">
+        <div class="loader-photo" aria-hidden="true"></div>
+        <div class="loader-copy">
+          <p>Welcome to my portfolio</p>
+          <div class="intro-name" aria-label="Akshay Allam">
+            <span class="intro-word">
+              <b class="from-right">A</b>
+              <b class="from-left">k</b>
+              <b class="from-right">s</b>
+              <b class="from-left">h</b>
+              <b class="from-right">a</b>
+              <b class="from-left">y</b>
+            </span>
+            <span class="intro-word">
+              <b class="from-right">A</b>
+              <b class="from-left">l</b>
+              <b class="from-right">l</b>
+              <b class="from-left">a</b>
+              <b class="from-right">m</b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <p class="loader-count">Loading</p>
+    </div>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="motion-orbs" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">Akshay<span>AI</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#profile" data-i18n="nav.profile">Profile</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language switch">
+        <button class="active" type="button" data-lang-switch="en">EN</button>
+        <button type="button" data-lang-switch="fr">FR</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">AI Automation Builder - Business Analyst - Data Thinker</p>
+          <h1 data-i18n-html="hero.title">AI workflows for <em>clearer business operations.</em></h1>
+          <div class="role-reel" aria-label="Professional focus">
+            <div>
+              <span>AI Automation Builder</span>
+              <span>Business Analyst</span>
+              <span>Workflow Designer</span>
+              <span>Data Thinker</span>
+              <span>AI Automation Builder</span>
+              <span>Business Analyst</span>
+            </div>
+          </div>
+          <p class="hero-text" data-i18n="hero.text">
+            I build practical automations that connect tools, route information, reduce manual work,
+            and help business teams make faster decisions.
+          </p>
+          <div class="signal-panel" aria-label="Current focus">
+            <span data-i18n="hero.focusLabel">Current focus</span>
+            <strong data-i18n="hero.focus">AI workflow systems for business operations</strong>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:akshayallam11@gmail.com" data-i18n="hero.cta">Start a conversation</a>
+            <a class="button secondary" href="assets/akshay-allam-cv.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Download CV</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/Akshay-ALLAM">GitHub</a>
+          </div>
+          <div class="metrics" aria-label="Profile highlights">
+            <div><strong>Paris</strong><span data-i18n="hero.metric1">France based</span></div>
+            <div><strong>n8n + Make</strong><span data-i18n="hero.metric2">Automation focus</span></div>
+            <div><strong>AI + Data</strong><span data-i18n="hero.metric3">Business workflow lens</span></div>
+          </div>
+        </div>
+
+        <aside class="ai-console reveal" aria-label="AI automation command center">
+          <div class="console-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>automation.system</p>
+          </div>
+          <div class="console-body">
+            <div class="avatar-ring">
+              <img src="https://github.com/Akshay-ALLAM.png" alt="Akshay Allam" />
+            </div>
+            <div class="scan-line"></div>
+            <div class="console-text">
+              <p class="status"><span></span> <b data-i18n="console.status">Available for opportunities</b></p>
+              <h2>Akshay Allam</h2>
+              <p data-i18n="console.role">AI Automation Builder | Strategy & Data Analyst</p>
+            </div>
+            <div class="workflow-map" aria-hidden="true">
+              <div class="node active" data-i18n="workflow.input">Input</div>
+              <div class="link"></div>
+              <div class="node" data-i18n="workflow.ai">AI</div>
+              <div class="link"></div>
+              <div class="node" data-i18n="workflow.sheets">Sheets</div>
+              <div class="link"></div>
+              <div class="node" data-i18n="workflow.action">Action</div>
+            </div>
+            <div class="terminal">
+              <p><span>01</span> <b data-i18n="console.step1">capture business signal</b></p>
+              <p><span>02</span> <b data-i18n="console.step2">classify, route, enrich</b></p>
+              <p><span>03</span> <b data-i18n="console.step3">trigger next action</b></p>
+            </div>
+            <div class="console-meter" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="marquee" aria-label="Automation areas">
+        <div>
+          <span data-i18n="marquee.n8n">n8n workflows</span>
+          <span data-i18n="marquee.make">Make automation</span>
+          <span data-i18n="marquee.agents">AI agents</span>
+          <span data-i18n="marquee.sheets">Google Sheets systems</span>
+          <span data-i18n="marquee.powerbi">Power BI dashboards</span>
+          <span data-i18n="marquee.airtable">Airtable learning</span>
+        </div>
+      </section>
+
+      <section id="profile" class="section profile-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="profile.eyebrow">Profile depth</p>
+          <h2 data-i18n="profile.title">Business analysis, finance, and automation in one operating view.</h2>
+          <p data-i18n="profile.intro">
+            MBA candidate in Corporate Finance with experience across market research, competitive intelligence,
+            financial planning, data dashboards, and AI-supported workflow automation.
+          </p>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card1Label">Market strategy</span>
+            <h3 data-i18n="profile.card1Title">Research that supports decisions</h3>
+            <p data-i18n="profile.card1Text">
+              Researched funding opportunities, grants, market entry points, and competitor positioning for
+              international business development work.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card2Label">Data analysis</span>
+            <h3 data-i18n="profile.card2Title">Dashboards and reporting</h3>
+            <p data-i18n="profile.card2Text">
+              Built Power BI dashboards, cleaned datasets, validated data quality, and supported senior
+              stakeholders with reporting workflows.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span data-i18n="profile.card3Label">Finance projects</span>
+            <h3 data-i18n="profile.card3Title">Commercial planning</h3>
+            <p data-i18n="profile.card3Text">
+              Worked on market feasibility, strategic financial planning, operational KPIs, and investor-style
+              materials through MBA and internship projects.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="work" class="section casework-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="casework.eyebrow">Selected work</p>
+          <h2 data-i18n="casework.title">Public-safe case studies from business, finance, and automation work.</h2>
+          <p data-i18n="casework.text">
+            I use project decks as source evidence, but keep public summaries focused on what recruiters need:
+            problem, analysis, business impact, and implementation thinking.
+          </p>
+        </div>
+        <div class="casework-grid">
+          <article class="casework-card reveal">
+            <span data-i18n="casework.card1Label">Market expansion</span>
+            <h3 data-i18n="casework.card1Title">AgileWater.fr - Kenya entry strategy</h3>
+            <p data-i18n="casework.card1Text">
+              Built a market feasibility view covering regulatory context, competitive landscape, operational KPIs,
+              entry cost, revenue potential, and beneficiary impact.
+            </p>
+            <ul>
+              <li data-i18n="casework.card1Point1">Modeled EUR70K entry cost and EUR225K revenue at 5% penetration.</li>
+              <li data-i18n="casework.card1Point2">Defined production benchmarks including EUR0.06/L unit cost and 270,000 L/day capacity.</li>
+            </ul>
+            <div class="casework-meta">
+              <p data-i18n="casework.metaAgile">This is a public summary based on my project deck.</p>
+            </div>
+          </article>
+          <article class="casework-card reveal">
+            <span data-i18n="casework.card2Label">PoC design</span>
+            <h3 data-i18n="casework.card2Title">SkillsPass - Deutsche Bahn partnership concept</h3>
+            <p data-i18n="casework.card2Text">
+              Converted knowledge-retention problems into a structured digital credential wallet concept for
+              Construction and Project Management teams.
+            </p>
+            <ul>
+              <li data-i18n="casework.card2Point1">Mapped incomplete handovers, repeated mistakes, and onboarding delays into a clear problem statement.</li>
+              <li data-i18n="casework.card2Point2">Structured a 6-phase, 100-day PoC roadmap from validation to stakeholder reporting.</li>
+            </ul>
+            <div class="casework-meta">
+              <p data-i18n="casework.metaCertiff">This is a public-safe summary; the full deck can be shared privately if requested.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="system" class="section system-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="system.eyebrow">System thinking</p>
+          <h2 data-i18n="system.title">From messy process to intelligent workflow.</h2>
+        </div>
+        <div class="system-grid">
+          <article class="system-card reveal">
+            <span>01</span>
+            <h3 data-i18n="system.card1Title">Map the work</h3>
+            <p data-i18n="system.card1Text">Understand the manual steps, decision points, handoffs, and where time gets wasted.</p>
+          </article>
+          <article class="system-card reveal">
+            <span>02</span>
+            <h3 data-i18n="system.card2Title">Build the automation</h3>
+            <p data-i18n="system.card2Text">Connect APIs, spreadsheets, AI models, and business tools into a practical workflow.</p>
+          </article>
+          <article class="system-card reveal">
+            <span>03</span>
+            <h3 data-i18n="system.card3Title">Make it usable</h3>
+            <p data-i18n="system.card3Text">Document the process, structure the outputs, and keep the system easy to understand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" class="section stack-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="stack.eyebrow">Automation stack</p>
+          <h2 data-i18n="stack.title">Tools I use to connect business logic with AI execution.</h2>
+        </div>
+        <div class="stack-board reveal">
+          <div class="stack-item stack-n8n">
+            <div class="tool-visual n8n-flow" aria-hidden="true">
+              <i></i><b></b><i></i><b></b><i></i>
+            </div>
+            <strong>n8n</strong>
+            <span data-i18n="stack.n8n">Workflow orchestration</span>
+          </div>
+          <div class="stack-item stack-make">
+            <div class="tool-visual make-flow" aria-hidden="true">
+              <i>M</i><b></b><i></i><b></b><i></i>
+            </div>
+            <strong>Make</strong>
+            <span data-i18n="stack.make">No-code automation</span>
+          </div>
+          <div class="stack-item stack-sheets">
+            <div class="tool-visual sheets-grid" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <strong>Google Sheets</strong>
+            <span data-i18n="stack.sheets">Lightweight operations layer</span>
+          </div>
+          <div class="stack-item stack-powerbi">
+            <div class="tool-visual bi-bars" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <strong>Power BI</strong>
+            <span data-i18n="stack.powerbi">Business dashboards</span>
+          </div>
+          <div class="stack-item stack-ai">
+            <div class="tool-visual ai-web" aria-hidden="true">
+              <i></i><b></b><i></i><b></b><i></i><b></b><i></i>
+            </div>
+            <strong>AI Models</strong>
+            <span data-i18n="stack.ai">Classification, reasoning, summarization</span>
+          </div>
+          <div class="stack-item stack-airtable">
+            <div class="tool-visual airtable-blocks" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+            <strong>Airtable</strong>
+            <span data-i18n="stack.airtable">Learning next</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section experience-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="experience.eyebrow">Background</p>
+          <h2 data-i18n="experience.title">Business, research, and data experience behind the automation.</h2>
+        </div>
+        <div class="timeline">
+          <article class="reveal">
+            <p class="date" data-i18n="experience.certiffDate">May 2025 - Sep 2025</p>
+            <h3 data-i18n="experience.certiffTitle">Market Research Analyst - Certiff B.V.</h3>
+            <p data-i18n="experience.certiffText">
+              Researched funding opportunities, grants, strategic partnerships, market entry points,
+              and competitors including Accredible, Credly, Certwell, Certif-ID, and HandsHQ.
+            </p>
+          </article>
+          <article class="reveal">
+            <p class="date" data-i18n="experience.dataDate">Mar 2023 - Oct 2023</p>
+            <h3 data-i18n="experience.dataTitle">Data Analyst - Artificial Penetration Software Solutions Pvt. Ltd.</h3>
+            <p data-i18n="experience.dataText">
+              Built Power BI dashboards, cleaned and validated datasets, used SQL and Excel for analysis,
+              and improved reporting workflows for operational decision-making.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="education-moment reveal" aria-label="Education transition">
+        <div class="education-moment-card">
+          <img src="assets/education-graduation-moment.jpg" alt="Graduation celebration atmosphere" loading="lazy" />
+          <div class="education-moment-shade"></div>
+          <div class="education-moment-copy">
+            <p class="eyebrow" data-i18n="education.eyebrow">Education journey</p>
+            <h2 data-i18n="education.title">From Hyderabad to Paris.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="section education-section">
+        <div class="education-card reveal">
+          <div class="education-heading">
+            <p class="eyebrow" data-i18n="education.eyebrow">Education journey</p>
+            <h2 data-i18n="education.title">From Hyderabad to Paris.</h2>
+            <p data-i18n="education.text">
+              Finance foundation in India, then corporate finance and business strategy in France.
+            </p>
+          </div>
+          <div class="edu-stop india">
+            <div class="edu-place" aria-hidden="true">
+              <span class="flag">IN</span>
+              <div class="charminar">
+                <img src="assets/charminar-3d.png" alt="" loading="lazy" />
+              </div>
+              <small data-i18n="education.hyderabad">Hyderabad</small>
+            </div>
+            <div class="edu-detail">
+              <span data-i18n="education.bbaDate">Jun 2019 - Jul 2022</span>
+              <h3 data-i18n="education.bba">BBA in Finance</h3>
+              <p data-i18n="education.bbaSchool">Osmania University - Hyderabad, India</p>
+            </div>
+          </div>
+          <div class="flight-path" aria-hidden="true">
+            <strong data-i18n="education.hyderabad">Hyderabad</strong>
+            <span></span>
+            <i><b></b></i>
+            <em data-i18n="education.paris">Paris</em>
+          </div>
+          <div class="edu-stop france">
+            <div class="edu-place" aria-hidden="true">
+              <span class="flag">FR</span>
+              <div class="eiffel">
+                <img src="assets/eiffel-3d.png" alt="" loading="lazy" />
+              </div>
+              <small data-i18n="education.paris">Paris</small>
+            </div>
+            <div class="edu-detail">
+              <span data-i18n="education.mbaDate">Mar 2024 - Jun 2026</span>
+              <h3 data-i18n="education.mba">MBA in Corporate Finance</h3>
+              <p data-i18n="education.mbaSchool">ISTEC Business School - Paris, France</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact reveal">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 data-i18n="contact.title">Let us build AI systems that actually save time.</h2>
+        <p data-i18n="contact.text">
+          I am open to full-time roles, internships, freelance projects, remote work, and collaborations
+          across Europe, India, and AI communities.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:akshayallam11@gmail.com">akshayallam11@gmail.com</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/akshay-allam" data-i18n="contact.linkedin">Connect on LinkedIn</a>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
