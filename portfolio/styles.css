@@ -1077,6 +1077,31 @@ p {
   line-height: 1.65;
 }
 
+.certification-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(96, 68, 162, 0.35);
+  padding-bottom: 0.18rem;
+  color: #6044a2;
+  font-family: "Space Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.certification-link::after {
+  content: "->";
+  transition: transform 180ms ease;
+}
+
+.certification-link:hover::after {
+  transform: translateX(4px);
+}
+
 .certification-mark {
   position: relative;
   display: grid;
