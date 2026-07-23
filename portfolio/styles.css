@@ -1044,12 +1044,17 @@ p {
   padding: 1.2rem;
 }
 
+.certification-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+}
+
 .certification-card {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 1.35rem;
   align-items: center;
-  max-width: 760px;
   padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -1130,6 +1135,13 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.38);
   border-radius: 22px;
   animation: certOrbit 5s linear infinite;
+}
+
+.talis-mark {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.4), transparent 2rem),
+    linear-gradient(135deg, #315f89, #102236);
+  box-shadow: 0 18px 42px rgba(49, 95, 137, 0.24);
 }
 
 .tool-visual {
